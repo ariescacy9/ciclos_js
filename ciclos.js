@@ -80,8 +80,8 @@ function colors(color) {
       return console.log ("This is green"); //En caso que el color recibido sea "green", devuleve --> "This is green"
       break;
     case "orange":
-        return console.log ("This is orange"); //En caso que el color recibido sea "orange", devuleve --> "This is orange"
-        break;
+      return console.log ("This is orange"); //En caso que el color recibido sea "orange", devuleve --> "This is orange"
+      break;
     default:
       return console.log ("Color not found"); //Caso default: devuelve --> "Color not found"
       break;
@@ -94,7 +94,7 @@ colors('red');
 // Devuelve "true" si "numero" es 10 o 5
 // De lo contrario, devuelve "false"
 function esDiezOCinco(numero) {
-  return console.log (numero == 10 || numero==5? "true" : "false");
+  return console.log (numero === 10 || numero===5? "true" : "false");
 }
 
 esDiezOCinco(10);
@@ -125,13 +125,13 @@ esEntero(-0.3);
 // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
 // De lo contrario, devuelve el numero
 function fizzBuzz(numero) {
-  if(numero%3==0 && numero%5==0){
+  if(numero%3===0 && numero%5===0){
     return console.log ("fizzbuzz");
   }
-  else if(numero%5==0){
+  else if(numero%5===0){
     return console.log ("buzz");
   }
-  else if(numero%3==0){
+  else if(numero%3===0){
     return console.log ("buzz");
   } else {
     return console.log (numero);
@@ -147,22 +147,21 @@ fizzBuzz(30);
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false.
 function operadoresLogicos(num1, num2, num3) {
- if(num1>num2 && num1>num3 && num1>0) {
-  return console.log ("Número 1 es mayor y positivo");
- }
- if(num1<0 || num2<0 || num3<0){
-  return console.log ("Hay negativos");
- }
- if(num3>num2 && num3>num1) {
-  num3++
-  return console.log (num3);
- }
- if(num1==0 || num2==0 || num3==0){
-  return console.log ("error");
- }
- else {
-  return console.log ("falso");
- }
+  if(num1>num2 && num1>num3 && num1>0) {
+    return console.log ("Número 1 es mayor y positivo");
+  }
+  if(num1<0 || num2<0 || num3<0){
+    return console.log ("Hay negativos");
+  }
+  if(num3>num2 && num3>num1) {
+    num3++
+    return console.log (num3);
+  }
+  if(num1===0 || num2===0 || num3===0){
+    return console.log ("error");
+  }else {
+    return console.log ("falso");
+  }
 }
 
 operadoresLogicos(3, 4, 1);
@@ -173,21 +172,32 @@ operadoresLogicos(3, 4, 1);
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
 function esPrimo(numero) {
- 
+  if(numero ===2){
+    return true;
+  }else if(numero<2){
+    return false;
+  } for(let i=2; i<numero;i++){
+    if(numero%i ===0){
+      return false;
+    }
+  }
+  return true;
 }
+
+esPrimo(25);
 
  //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
 function esVerdadero(valor){
-  if(valor =='true'){
+  if(valor ==='true'){
     console.log("Soy verdadero")
   }
-  else if (valor =='false') {
+  else if (valor ==='false') {
     console.log("Soy falso")
   }
 }
-
+esVerdadero("true");
 
 
 //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
