@@ -184,7 +184,7 @@ function esPrimo(numero) {
   return true;
 }
 
-esPrimo(25);
+esPrimo(5);
 
  //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
@@ -211,7 +211,7 @@ function tablaDelSeis(){
     tabla = '6'+'*'+i+'='+ resultado;
     tablaFinal.push(tabla);
   }
-  return console.log(tablaFinal);
+  return console.table(tablaFinal);
 }
 tablaDelSeis();
 
